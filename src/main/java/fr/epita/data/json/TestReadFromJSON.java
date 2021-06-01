@@ -15,9 +15,17 @@ public class TestReadFromJSON {
 		JsonNode jsonNode = objectMapper.readTree(file);
 		JsonNodeType nodeType = jsonNode.getNodeType();
 		System.out.println(nodeType);
+		int total = 0;
+		int totalSize = jsonNode.size();
 		for (JsonNode elem : jsonNode){
-			System.out.println(elem.get("admin_name"));
+			String populationAsString = elem.get("population").asText();
+			int population = 0;
+			if (populationAsString!=null && !populationAsString.isEmpty()){
+				population = Integer.parseInt(populationAsString);
+			}
+			total += population;
 		}
-
+		System.out.println("total population = " + total);
+		System.out.println("average population per city = " + total/totalSize);
 	}
 }
