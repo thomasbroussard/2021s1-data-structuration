@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="2021-s1-data-structuration-transportation" />
+        <module name="aggregation_exercise" />
       </profile>
     </annotationProcessing>
   </component>
