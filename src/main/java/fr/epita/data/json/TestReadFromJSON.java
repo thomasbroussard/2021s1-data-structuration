@@ -25,6 +25,7 @@ public class TestReadFromJSON {
 			}
 			total += population;
 		}
+
 		System.out.println("total population = " + total);
 		System.out.println("average population per city = " + total/totalSize);
 	}

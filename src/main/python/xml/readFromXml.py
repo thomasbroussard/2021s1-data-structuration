@@ -7,3 +7,6 @@ print(root)
 elems = root.findall("./food")
 data = [[elem.find("./name").text, elem.find("./price").text] for elem in elems]
 print(data)
+
+val = etree.tostring(root, pretty_print=True)
+print(val)
