@@ -1,4 +1,4 @@
-package fr.epita.data.etls;
+package fr.epita.data.etls.itemreader;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,19 +10,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class TestAggregation {
+import fr.epita.data.etls.FireIncident;
 
+public class FireIncidentItemReader {
 
-	public static void main(String[] args) throws IOException {
-
-		//extract from california_fire_incidents.csv
-		//extract :
-		// latitude 	=> column 22
-		// longitude 	=> column 24
-		// date & time  => column 32
-
-
-		File file = new File("S:\\Work\\ae\\Epita\\workspaces\\2021-s1-data-strucuration-transportation\\aggregation_exercise\\src\\main\\resources\\California_Fire_Incidents.csv");
+	public List<FireIncident> extract(String path) throws IOException {
+		File file = new File(path);
 		List<String> lines = Files.readAllLines(file.toPath());
 		List<String> linesInError = new ArrayList<>();
 		List<String> linesInSuccess = new ArrayList<>();
@@ -48,17 +41,7 @@ public class TestAggregation {
 				linesInError.add(line);
 			}
 		}
-
-		System.out.println(fireIncidents);
-		System.out.println(fireIncidents.size());
-
-		System.out.println(linesInError.get(0));
-
-
-
-
-
-
+		return fireIncidents;
 
 	}
 }
